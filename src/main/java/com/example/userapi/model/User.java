@@ -1,18 +1,17 @@
-
-
-
 package com.example.userapi.model;
 
-
-
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 public class User {
+
     private Long id;
 
-   
+    @NotBlank(message = "El nombre es obligatorio")
     private String name;
 
-   
+    @NotBlank(message = "El email es obligatorio")
+    @Email(message = "Debe ser un email válido")
     private String email;
 
     public Long getId() { return id; }
